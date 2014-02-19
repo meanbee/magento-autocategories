@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Meanbee_AutoCategories" default="build">
+    <target name="build" depends="lint" />
+    <target name="lint" depends="lint-php,lint-xml" />
+
+    <target name="lint-php" description="Perform syntax check of all php files">
+        <phplint cachefile="phplint.cache">
+            <fileset dir=".">
+                <include name="**/*.php" />
+                <include name="**/*.phtml" />
+            </fileset>
+        </phplint>
+    </target>
+
+    <target name="lint-xml" description="Perform a syntax check of all xml files">
+        <xmllint>
+            <fileset dir=".">
+                <include name="**/*.xml" />
+            </fileset>
+        </xmllint>
+    </target>
+</project>
