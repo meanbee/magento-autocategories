@@ -5,4 +5,23 @@
             <version>1.0.0</version>
         </Meanbee_AutoCategories>
     </modules>
+    <global>
+        <models>
+            <meanbee_autocategories>
+                <class>Meanbee_AutoCategories_Model</class>
+            </meanbee_autocategories>
+        </models>
+        <helpers>
+            <meanbee_autocategories>
+                <class>Meanbee_AutoCategories_Helper</class>
+            </meanbee_autocategories>
+        </helpers>
+    </global>
+    <default>
+        <meanbee_autocategories>
+            <general>
+                <enabled>0</enabled>
+            </general>
+        </meanbee_autocategories>
+    </default>
 </config>
