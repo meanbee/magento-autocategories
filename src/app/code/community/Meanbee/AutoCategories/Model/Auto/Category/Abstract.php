@@ -30,6 +30,21 @@ abstract class Meanbee_AutoCategories_Model_Auto_Category_Abstract extends Mage_
     abstract protected function applyFilter(Mage_Catalog_Model_Resource_Eav_Mysql4_Product_Collection $collection);
 
     /**
+     * Return module name of this auto category.
+     *
+     * @return string
+     */
+    public function getModuleName() {
+        $module = $this->getData('module_name');
+        if (is_null($module)) {
+            $class = get_class($this);
+            $module = substr($class, 0, strpos($class, '_Model'));
+            $this->setData('module_name', $module);
+        }
+        return $module;
+    }
+
+    /**
      * Return the Category model used for this auto category.
      *
      * @return Mage_Catalog_Model_Category
@@ -54,6 +69,12 @@ abstract class Meanbee_AutoCategories_Model_Auto_Category_Abstract extends Mage_
             return;
         }
 
+        $category_id = $this->getCategoryId();
+        if (!$category_id) {
+            Mage::logException(new Exception(sprintf("%s doesn't have a category id set.", $this->getModuleName())));
+            return;
+        }
+
         $collection = Mage::getModel('catalog/product')->getCollection();
 
         $this->applyFilter($collection);
@@ -64,7 +85,7 @@ abstract class Meanbee_AutoCategories_Model_Auto_Category_Abstract extends Mage_
             ->reset(Zend_Db_Select::COLUMNS)
             ->columns(array('product_id' => 'entity_id'));
         $where = array(
-            'category_id = ?' => $this->getCategoryId(),
+            'category_id = ?' => $category_id,
             'product_id NOT IN (?)' => $select
         );
         if (!empty($products)) {
@@ -81,7 +102,7 @@ abstract class Meanbee_AutoCategories_Model_Auto_Category_Abstract extends Mage_
         $select
             ->reset(Zend_Db_Select::COLUMNS)
             ->columns(array(
-                'category_id' => new Zend_Db_Expr($this->getCategoryId()),
+                'category_id' => new Zend_Db_Expr($category_id),
                 'product_id'  => 'entity_id',
                 'position'    => $this->getPositionExpr()
             ));
