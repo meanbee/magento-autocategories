@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Meanbee_SaleCategory>
+            <active>true</active>
+            <codePool>community</codePool>
+        </Meanbee_SaleCategory>
+    </modules>
+</config>

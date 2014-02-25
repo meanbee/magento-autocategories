@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Meanbee_SaleCategory>
+            <version>1.0.0</version>
+        </Meanbee_SaleCategory>
+    </modules>
+    <global>
+        <models>
+            <meanbee_salecategory>
+                <class>Meanbee_SaleCategory_Model</class>
+            </meanbee_salecategory>
+        </models>
+        <helpers>
+            <meanbee_salecategory>
+                <class>Meanbee_SaleCategory_Helper</class>
+            </meanbee_salecategory>
+        </helpers>
+        <meanbee_autocategories>
+            <meanbee_salecategory>
+                <model>meanbee_salecategory/auto_category_sale</model>
+            </meanbee_salecategory>
+        </meanbee_autocategories>
+    </global>
+    <default>
+        <meanbee_autocategories>
+            <sale_category>
+                <enabled>0</enabled>
+            </sale_category>
+        </meanbee_autocategories>
+    </default>
+</config>
