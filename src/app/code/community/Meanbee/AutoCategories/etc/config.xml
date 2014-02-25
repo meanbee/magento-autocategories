@@ -17,6 +17,18 @@
             </meanbee_autocategories>
         </helpers>
     </global>
+    <crontab>
+        <jobs>
+            <meanbee_autocategories_maintain>
+                <schedule>
+                    <cron_expr>5 * * * *</cron_expr>
+                </schedule>
+                <run>
+                    <model>meanbee_autocategories/cron::maintainCategories</model>
+                </run>
+            </meanbee_autocategories_maintain>
+        </jobs>
+    </crontab>
     <default>
         <meanbee_autocategories>
             <general>
