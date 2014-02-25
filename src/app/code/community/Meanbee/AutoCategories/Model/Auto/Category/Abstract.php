@@ -2,9 +2,6 @@
 
 abstract class Meanbee_AutoCategories_Model_Auto_Category_Abstract extends Mage_Core_Model_Abstract {
 
-    /** @var Mage_Catalog_Model_Category $category */
-    protected $category;
-
     /**
      * Check if the auto category is enabled.
      *
@@ -50,11 +47,12 @@ abstract class Meanbee_AutoCategories_Model_Auto_Category_Abstract extends Mage_
      * @return Mage_Catalog_Model_Category
      */
     public function getCategory() {
-        if (!$this->category) {
-            $this->category = Mage::getModel('catalog/category')->load($this->getCategoryId());
+        $category = $this->getData('category');
+        if (is_null($category)) {
+            $category = Mage::getModel('catalog/category')->load($this->getCategoryId());
+            $this->setData('category', $category);
         }
-
-        return $this->category;
+        return $category;
     }
 
     /**
