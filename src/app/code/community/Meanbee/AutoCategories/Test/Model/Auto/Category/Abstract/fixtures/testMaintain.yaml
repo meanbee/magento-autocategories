@@ -1,0 +1,124 @@
+eav:
+  catalog_category:
+    -
+      entity_id: 3
+      parent_id: 2
+      created_at: 2014-02-26 14:27:59
+      updated_at: 2014-02-26 14:28:09
+      path: 1/2/3
+      position: 1
+      level: 2
+      children_count: 0
+      store_id: 1
+      all_children: null
+      available_sort_by:
+      children: null
+      custom_apply_to_products: 0
+      custom_design:
+      custom_design_from: 0000-00-00 00:00:00
+      custom_design_to: 0000-00-00 00:00:00
+      custom_layout_update:
+      custom_use_parent_settings: 0
+      default_sort_by:
+      description: This is a test
+      display_mode: PRODUCTS
+      filter_price_range: 0
+      image:
+      include_in_menu: 1
+      is_active: 1
+      is_anchor: 0
+      landing_page: 0
+      meta_description:
+      meta_keywords:
+      meta_title:
+      name: Test Category
+      page_layout:
+      path_in_store: null
+      thumbnail:
+      url_key: test-category
+      url_path: test-category.html
+  catalog_product:
+    -
+      entity_id: 1
+      attribute_set_id: 4
+      type_id: simple
+      cost: null
+      created_at: 2014-02-26 14:27:29
+      enable_googlecheckout: 1
+      gift_message_available: 0
+      has_options: 0
+      image_label: null
+      is_imported: 0
+      is_recurring: 0
+      links_exist: null
+      links_purchased_separately: null
+      links_title: null
+      name: Test Product
+      news_from_date: null
+      news_to_date: null
+      price: 100
+      price_type: null
+      price_view: null
+      recurring_profile: null
+      required_options: 0
+      shipment_type: null
+      short_description: Test
+      sku: test
+      sku_type: null
+      small_image: no_selection
+      small_image_label: null
+      special_from_date: null
+      special_price: null
+      special_to_date: null
+      tax_class_id: 0
+      thumbnail: no_selection
+      thumbnail_label: null
+      updated_at: 2014-02-26 14:27:29
+      url_key: test-product
+      url_path: test-product.html
+      visibility: 4
+      weight: 1
+      weight_type: null
+    -
+      entity_id: 2
+      attribute_set_id: 4
+      type_id: simple
+      cost: null
+      created_at: 2014-02-26 14:27:29
+      enable_googlecheckout: 1
+      gift_message_available: 0
+      has_options: 0
+      image_label: null
+      is_imported: 0
+      is_recurring: 0
+      links_exist: null
+      links_purchased_separately: null
+      links_title: null
+      name: Test Product 2
+      news_from_date: null
+      news_to_date: null
+      price: 100
+      price_type: null
+      price_view: null
+      recurring_profile: null
+      required_options: 0
+      shipment_type: null
+      short_description: Test
+      sku: test2
+      sku_type: null
+      small_image: no_selection
+      small_image_label: null
+      special_from_date: null
+      special_price: null
+      special_to_date: null
+      tax_class_id: 0
+      thumbnail: no_selection
+      thumbnail_label: null
+      updated_at: 2014-02-26 14:27:29
+      url_key: test-product-2
+      url_path: test-product-2.html
+      visibility: 4
+      weight: 1
+      weight_type: null
+      category_ids:
+        - 3
