@@ -16,6 +16,17 @@
                 <class>Meanbee_SaleCategory_Helper</class>
             </meanbee_salecategory>
         </helpers>
+        <events>
+            <catalog_product_save_commit_after>
+                <observers>
+                    <meanbee_salecategory>
+                        <type>singleton</type>
+                        <class>Meanbee_SaleCategory_Model_Observer</class>
+                        <method>maintainProduct</method>
+                    </meanbee_salecategory>
+                </observers>
+            </catalog_product_save_commit_after>
+        </events>
         <meanbee_autocategories>
             <meanbee_salecategory>
                 <model>meanbee_salecategory/auto_category_sale</model>
