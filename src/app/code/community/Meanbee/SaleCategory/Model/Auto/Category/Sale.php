@@ -11,8 +11,7 @@ class Meanbee_SaleCategory_Model_Auto_Category_Sale extends Meanbee_AutoCategori
     }
 
     protected function applyFilter(Mage_Catalog_Model_Resource_Eav_Mysql4_Product_Collection $collection) {
-        $date = new DateTime('now');
-        $now = $date->format('Y-m-d H:i:s');
+        $now = $this->getCurrentDate()->toString('YYYY-MM-dd HH:mm:ss');
 
         $collection
             ->addAttributeToFilter("special_price", array("notnull" => true))
@@ -26,6 +25,15 @@ class Meanbee_SaleCategory_Model_Auto_Category_Sale extends Meanbee_AutoCategori
             ), "left");
 
         return $this;
+    }
+
+    /**
+     * Return the current date.
+     *
+     * @return Zend_Date
+     */
+    protected function getCurrentDate() {
+        return Mage::app()->getLocale()->storeDate(Mage::app()->getStore(), null, true);
     }
 
 }
