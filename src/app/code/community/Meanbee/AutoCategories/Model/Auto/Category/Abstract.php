@@ -56,6 +56,23 @@ abstract class Meanbee_AutoCategories_Model_Auto_Category_Abstract extends Mage_
     }
 
     /**
+     * Return a product collection with filters for products matching this auto category.
+     *
+     * @return Mage_Catalog_Model_Resource_Eav_Mysql4_Product_Collection
+     */
+    public function getProductCollection() {
+        $collection = $this->getData('product_collection');
+        if (is_null($collection)) {
+            $collection = Mage::getModel('catalog/product')->getCollection();
+
+            $this->applyFilter($collection);
+
+            $this->setData('product_collection', $collection);
+        }
+        return $collection;
+    }
+
+    /**
      * Process the given product ids against the category, adding them if they should be in it
      * or removing them if they no longer match the filter. If no products are specified, process
      * all products.
@@ -73,9 +90,7 @@ abstract class Meanbee_AutoCategories_Model_Auto_Category_Abstract extends Mage_
             return;
         }
 
-        $collection = Mage::getModel('catalog/product')->getCollection();
-
-        $this->applyFilter($collection);
+        $collection = clone $this->getProductCollection();
 
         // Remove products not matching the filter anymore
         $select = clone $collection->getSelect();
