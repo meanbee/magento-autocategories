@@ -2,3 +2,5 @@
 src/app/etc/modules/* app/etc/modules/
 
 src/app/code/community/Meanbee/* app/code/community/Meanbee/
+
+package/* var/connect/*
