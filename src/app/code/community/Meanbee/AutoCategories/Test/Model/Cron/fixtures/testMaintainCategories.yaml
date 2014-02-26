@@ -1,0 +1,4 @@
+config:
+  default/meanbee_autocategories/general/enabled: 1
+  global/meanbee_autocategories:
+  global/meanbee_autocategories/test_category/model: meanbee_autocategories/auto_category_abstract

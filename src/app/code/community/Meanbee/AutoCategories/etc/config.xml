@@ -36,4 +36,11 @@
             </general>
         </meanbee_autocategories>
     </default>
+    <phpunit>
+        <suite>
+            <modules>
+                <Meanbee_AutoCategories />
+            </modules>
+        </suite>
+    </phpunit>
 </config>
