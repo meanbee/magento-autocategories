@@ -15,7 +15,7 @@ class Meanbee_AutoCategories_Model_Cron {
         $config = Mage::getConfig()->getNode(self::XML_PATH_AUTO_CATEGORIES);
         foreach ($config->children() as $auto_category) {
             if ($auto_category->model) {
-                Mage::getModel($auto_category->model)->maintain();
+                Mage::getModel((string)$auto_category->model)->maintain();
             }
         }
     }
