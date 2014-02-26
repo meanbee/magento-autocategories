@@ -40,4 +40,11 @@
             </sale_category>
         </meanbee_autocategories>
     </default>
+    <phpunit>
+        <suite>
+            <modules>
+                <Meanbee_SaleCategory />
+            </modules>
+        </suite>
+    </phpunit>
 </config>
