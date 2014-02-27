@@ -1,0 +1,16 @@
+-
+  -
+    attribute_set_id: 4
+    type_id: simple
+    sku: test
+    name: Test product
+    description: Test product
+    short_description: Test product
+    price: 29.99
+    weight: 1
+    visibility: 4
+    status: 1
+    tax_class_id: 0
+    stock_data:
+      is_in_stock: 1
+      qty: 9999

@@ -1,0 +1,44 @@
+config:
+  default/meanbee_autocategories/general/enabled: 1
+  default/meanbee_autocategories/new_category/enabled: 1
+  default/meanbee_autocategories/new_category/category: 3
+  default/meanbee_autocategories/new_category/days: 15
+eav:
+  catalog_category:
+    -
+      entity_id: 3
+      parent_id: 2
+      created_at: 2014-01-26 14:27:59
+      updated_at: 2014-01-26 14:28:09
+      path: 1/2/3
+      position: 1
+      level: 2
+      children_count: 0
+      store_id: 1
+      all_children: null
+      available_sort_by:
+      children: null
+      custom_apply_to_products: 0
+      custom_design:
+      custom_design_from: 0000-00-00 00:00:00
+      custom_design_to: 0000-00-00 00:00:00
+      custom_layout_update:
+      custom_use_parent_settings: 0
+      default_sort_by:
+      description: This is a test
+      display_mode: PRODUCTS
+      filter_price_range: 0
+      image:
+      include_in_menu: 1
+      is_active: 1
+      is_anchor: 0
+      landing_page: 0
+      meta_description:
+      meta_keywords:
+      meta_title:
+      name: Test Sale Category
+      page_layout:
+      path_in_store: null
+      thumbnail:
+      url_key: test-sale-category
+      url_path: test-sale-category.html
