@@ -24,7 +24,7 @@ abstract class Meanbee_AutoCategories_Model_Auto_Category_Abstract extends Mage_
      *
      * @return $this
      */
-    abstract protected function applyFilter(Mage_Catalog_Model_Resource_Eav_Mysql4_Product_Collection $collection);
+    abstract protected function applyFilter($collection);
 
     /**
      * Return module name of this auto category.
