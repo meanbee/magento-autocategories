@@ -10,7 +10,7 @@ class Meanbee_SaleCategory_Model_Auto_Category_Sale extends Meanbee_AutoCategori
         return Mage::helper('meanbee_salecategory/config')->getCategoryId();
     }
 
-    protected function applyFilter(Mage_Catalog_Model_Resource_Eav_Mysql4_Product_Collection $collection) {
+    protected function applyFilter($collection) {
         $now = $this->getCurrentDate()->toString('YYYY-MM-dd HH:mm:ss');
 
         $collection
