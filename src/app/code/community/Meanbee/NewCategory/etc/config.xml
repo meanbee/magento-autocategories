@@ -22,7 +22,7 @@
                     <meanbee_newcategory>
                         <type>singleton</type>
                         <class>meanbee_newcategory/observer</class>
-                        <method>maintainNewProduct</method>
+                        <method>maintainProduct</method>
                     </meanbee_newcategory>
                 </observers>
             </catalog_product_save_commit_after>
