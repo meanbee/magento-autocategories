@@ -17,10 +17,18 @@
             </meanbee_newcategory>
         </helpers>
     </global>
+    <default>
+        <meanbee_autocategories>
+            <new_category>
+                <enabled>0</enabled>
+                <days>14</days>
+            </new_category>
+        </meanbee_autocategories>
+    </default>
     <phpunit>
         <suite>
             <modules>
-                <Meanbee_NewCategory />
+                <Meanbee_NewCategory/>
             </modules>
         </suite>
     </phpunit>
