@@ -27,6 +27,11 @@
                 </observers>
             </catalog_product_save_commit_after>
         </events>
+        <meanbee_autocategories>
+            <meanbee_newcategory>
+                <model>meanbee_newcategory/auto_category_new</model>
+            </meanbee_newcategory>
+        </meanbee_autocategories>
     </global>
     <default>
         <meanbee_autocategories>

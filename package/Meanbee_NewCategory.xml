@@ -1,0 +1,91 @@
+<_>
+   <form_key>F1abOl5fle2tKWel</form_key>
+   <name>Meanbee_NewCategory</name>
+   <channel>community</channel>
+   <version_ids>
+      <version_ids>2</version_ids>
+   </version_ids>
+   <summary>Create an automatically managed category for new products.</summary>
+   <description>This extension automatically manages a category for new products. Simply create a category, configure the extension to use it and any new products you create will automatically appear in the category until they&apos;re no longer new. You can configure how long a product is considered new in the extension configuration.
+
+This extension requires Meanbee_AutoCategories to be installed to work.</description>
+   <license>Commercial License</license>
+   <license_uri/>
+   <version>1.0.0</version>
+   <stability>stable</stability>
+   <notes>Initial release.</notes>
+   <authors>
+      <name>
+         <name>Meanbee</name>
+      </name>
+      <user>
+         <user>meanbee</user>
+      </user>
+      <email>
+         <email>hello@meanbee.com</email>
+      </email>
+   </authors>
+   <depends_php_min>5.2.0</depends_php_min>
+   <depends_php_max>6.0.0</depends_php_max>
+   <depends>
+      <package>
+         <name>
+            <name/>
+         </name>
+         <channel>
+            <channel/>
+         </channel>
+         <min>
+            <min/>
+         </min>
+         <max>
+            <max/>
+         </max>
+         <files>
+            <files> </files>
+         </files>
+      </package>
+      <extension>
+         <name>
+            <name>Core</name>
+         </name>
+         <min>
+            <min/>
+         </min>
+         <max>
+            <max/>
+         </max>
+      </extension>
+   </depends>
+   <contents>
+      <target>
+         <target>magelocal</target>
+         <target>mageetc</target>
+         <target>magecommunity</target>
+      </target>
+      <path>
+         <path/>
+         <path>modules/Meanbee_NewCategory.xml</path>
+         <path>Meanbee/NewCategory</path>
+      </path>
+      <type>
+         <type>file</type>
+         <type>file</type>
+         <type>dir</type>
+      </type>
+      <include>
+         <include/>
+         <include/>
+         <include/>
+      </include>
+      <ignore>
+         <ignore/>
+         <ignore/>
+         <ignore/>
+      </ignore>
+   </contents>
+   <page>1</page>
+   <limit>200</limit>
+   <folder/>
+   <package/>
+</_>
