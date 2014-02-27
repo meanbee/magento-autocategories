@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<config>
+    <modules>
+        <Meanbee_NewCategory>
+            <version>1.0.0</version>
+        </Meanbee_NewCategory>
+    </modules>
+    <global>
+        <models>
+            <meanbee_newcategory>
+                <class>Meanbee_NewCategory_Model</class>
+            </meanbee_newcategory>
+        </models>
+        <helpers>
+            <meanbee_newcategory>
+                <class>Meanbee_NewCategory_Helper</class>
+            </meanbee_newcategory>
+        </helpers>
+    </global>
+    <phpunit>
+        <suite>
+            <modules>
+                <Meanbee_NewCategory />
+            </modules>
+        </suite>
+    </phpunit>
+</config>
