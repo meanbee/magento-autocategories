@@ -22,7 +22,7 @@ class Meanbee_NewCategory_Test_Model_Observer extends EcomDev_PHPUnit_Test_Case 
             Mage::throwException("Failed to save product: " . $e->getMessage());
         }
 
-        $product->load($product->getId());
+        $product = Mage::getModel('catalog/product')->load($product->getId());
 
         $this->assertContains(3, $product->getCategoryIds());
     }
