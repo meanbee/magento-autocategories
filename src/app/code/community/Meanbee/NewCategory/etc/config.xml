@@ -1,0 +1,46 @@
+<?xml version="1.0" ?>
+<config>
+    <modules>
+        <Meanbee_NewCategory>
+            <version>1.0.0</version>
+        </Meanbee_NewCategory>
+    </modules>
+    <global>
+        <models>
+            <meanbee_newcategory>
+                <class>Meanbee_NewCategory_Model</class>
+            </meanbee_newcategory>
+        </models>
+        <helpers>
+            <meanbee_newcategory>
+                <class>Meanbee_NewCategory_Helper</class>
+            </meanbee_newcategory>
+        </helpers>
+        <events>
+            <catalog_product_save_commit_after>
+                <observers>
+                    <meanbee_newcategory>
+                        <type>singleton</type>
+                        <class>meanbee_newcategory/observer</class>
+                        <method>maintainNewProduct</method>
+                    </meanbee_newcategory>
+                </observers>
+            </catalog_product_save_commit_after>
+        </events>
+    </global>
+    <default>
+        <meanbee_autocategories>
+            <new_category>
+                <enabled>0</enabled>
+                <days>14</days>
+            </new_category>
+        </meanbee_autocategories>
+    </default>
+    <phpunit>
+        <suite>
+            <modules>
+                <Meanbee_NewCategory/>
+            </modules>
+        </suite>
+    </phpunit>
+</config>
