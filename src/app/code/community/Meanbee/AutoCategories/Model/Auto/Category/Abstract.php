@@ -63,7 +63,7 @@ abstract class Meanbee_AutoCategories_Model_Auto_Category_Abstract extends Mage_
     public function getProductCollection() {
         $collection = $this->getData('product_collection');
         if (is_null($collection)) {
-            $collection = Mage::getModel('catalog/product')->getCollection();
+            $collection = Mage::getResourceModel('catalog/product_collection');
 
             $this->applyFilter($collection);
 
@@ -89,6 +89,9 @@ abstract class Meanbee_AutoCategories_Model_Auto_Category_Abstract extends Mage_
             Mage::logException(new Exception(sprintf("%s doesn't have a category id set.", $this->getModuleName())));
             return;
         }
+
+        $originalStore = Mage::app()->getStore();
+        Mage::app()->setCurrentStore(Mage_Core_Model_App::ADMIN_STORE_ID);
 
         $collection = clone $this->getProductCollection();
 
@@ -122,6 +125,8 @@ abstract class Meanbee_AutoCategories_Model_Auto_Category_Abstract extends Mage_
         $insert = $select->insertIgnoreFromSelect($this->getCategoryProductTable(), array('category_id', 'product_id', 'position'));
 
         $this->getConnection()->query($insert);
+
+        Mage::app()->setCurrentStore($originalStore);
     }
 
     /**
