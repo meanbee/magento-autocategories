@@ -14,7 +14,9 @@ class Meanbee_SaleCategory_Model_Auto_Category_Sale extends Meanbee_AutoCategori
         $now = $this->getCurrentDate()->toString('YYYY-MM-dd HH:mm:ss');
 
         $collection
+            ->addAttributeToFilter("price", array("notnull" => true))
             ->addAttributeToFilter("special_price", array("notnull" => true))
+            ->addAttributeToFilter("special_price", array("lt" => new Zend_Db_Expr("at_price.value")))
             ->addAttributeToFilter("special_from_date", array(
                 array("null" => true),
                 array("lteq" => $now)
