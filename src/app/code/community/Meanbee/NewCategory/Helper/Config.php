@@ -2,9 +2,10 @@
 
 class Meanbee_NewCategory_Helper_Config extends Mage_Core_Helper_Abstract {
 
-    const XML_PATH_IS_ENABLED  = 'meanbee_autocategories/new_category/enabled';
-    const XML_PATH_CATEGORY_ID = 'meanbee_autocategories/new_category/category';
-    const XML_PATH_DAYS_NEW    = 'meanbee_autocategories/new_category/days';
+    const XML_PATH_IS_ENABLED     = 'meanbee_autocategories/new_category/enabled';
+    const XML_PATH_CATEGORY_ID    = 'meanbee_autocategories/new_category/category';
+    const XML_PATH_USE_CREATED_AT = 'meanbee_autocategories/new_category/use_created_at';
+    const XML_PATH_DAYS_NEW       = 'meanbee_autocategories/new_category/days';
 
     /**
      * Check if NewCategory is enabled.
@@ -13,6 +14,15 @@ class Meanbee_NewCategory_Helper_Config extends Mage_Core_Helper_Abstract {
      */
     public function isEnabled() {
         return (Mage::getStoreConfigFlag(self::XML_PATH_IS_ENABLED)) ? $this->checkDependencies() : false;
+    }
+
+    /**
+     * Return use if is mode created_at enabled
+     *
+     * @return string
+     */
+    public function getUseCreatedAt() {
+        return Mage::getStoreConfig(self::XML_PATH_USE_CREATED_AT);
     }
 
     /**
