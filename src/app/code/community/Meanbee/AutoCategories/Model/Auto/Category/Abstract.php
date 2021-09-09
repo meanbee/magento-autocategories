@@ -126,6 +126,11 @@ abstract class Meanbee_AutoCategories_Model_Auto_Category_Abstract extends Mage_
 
         $this->getConnection()->query($insert);
 
+        if(Mage::helper('catalog/category_flat')->isEnabled()){
+            Mage::getSingleton('index/indexer')->getProcessByCode('catalog_category_product')->reindexEverything();
+            Mage::log('reindex catalog_category_product');
+        }
+
         Mage::app()->setCurrentStore($originalStore);
     }
 
