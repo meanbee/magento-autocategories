@@ -29,9 +29,32 @@ class Meanbee_NewCategory_Model_Auto_Category_New extends Meanbee_AutoCategories
      * @return $this
      */
     protected function applyFilter($collection) {
-        $cutoff_date = $this->getCutoffDate()->toString('YYYY-MM-dd HH:mm:ss');
+        if($this->getConfig()->getUseCreatedAt()){
+            $cutoff_date = $this->getCutoffDate()->toString('YYYY-MM-dd HH:mm:ss');
 
-        $collection->addAttributeToFilter('created_at', array('gteq' => $cutoff_date));
+            $collection->addAttributeToFilter('created_at', array('gteq' => $cutoff_date));
+        
+        }else{
+            $now = $this->getCurrentDate()->toString('YYYY-MM-dd HH:mm:ss');        
+            $collection->addAttributeToFilter("news_from_date", array(
+                array("notnull" => false),
+                array("lteq" => $now)
+            ), "left")
+            ->addAttributeToFilter("news_to_date", array(
+                array("null" => true),
+                array("gteq" => $now)
+            ), "left");
+
+        }
+    }
+
+    /**
+     * Return the current date.
+     *
+     * @return Zend_Date
+     */
+    protected function getCurrentDate() {
+        return Mage::app()->getLocale()->storeDate(Mage::app()->getStore(), null, true);
     }
 
     /**

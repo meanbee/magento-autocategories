@@ -29,6 +29,15 @@
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
                         </category>
+                        <use_created_at translate="label">
+                            <label>Use created at instead of date news_from_date / news_to_date?</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </use_created_at>
                         <days translate="label comment">
                             <label>Days New</label>
                             <comment><![CDATA[The number of days a product will stay in the "New" category after it has been added.]]></comment>
@@ -37,6 +46,7 @@
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
+                            <depends><use_created_at>1</use_created_at></depends>
                         </days>
                     </fields>
                 </new_category>

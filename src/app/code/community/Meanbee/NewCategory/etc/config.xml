@@ -37,6 +37,7 @@
         <meanbee_autocategories>
             <new_category>
                 <enabled>0</enabled>
+                <use_created_at>1</use_created_at>
                 <days>14</days>
             </new_category>
         </meanbee_autocategories>
